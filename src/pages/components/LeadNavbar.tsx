@@ -41,7 +41,16 @@ const LeadNavbar = (props:any) => {
   const toggle = () => setIsOpen(!isOpen);
 
   useEffect(()=>{
-     localStorage.setItem('favourites',JSON.stringify(""));
+    if (localStorage.getItem("favourites") === null) {
+          
+         let store:any =[];
+        
+        store.push({id:"-", name:"-"});
+        localStorage.setItem('favourites',JSON.stringify(store));
+        }
+
+
+     //localStorage.setItem('favourites',JSON.stringify(""));
       let store:any = [];
       if (localStorage.getItem("favourites") === null) {
         let responser:any = "You dont have favourites";
@@ -83,7 +92,7 @@ const LeadNavbar = (props:any) => {
             </NavItem>
 
             <NavItem>
-              <NavLink href="https://github.com/danielromeo/">Source Code</NavLink>
+              <NavLink href="https://github.com/danielromeo/photoapp">Source Code</NavLink>
             </NavItem>
 
             <UncontrolledDropdown nav inNavbar>
@@ -96,7 +105,7 @@ const LeadNavbar = (props:any) => {
                 resp.map((item:any)=>{
 
                   let placeOfLinkage = `/venue/${item.id}`
-                 return <Link to={placeOfLinkage} ><DropdownItem key={item.id}> {item.name}</DropdownItem></Link>
+                 return <Link to={placeOfLinkage}> <DropdownItem key={item.id}> {item.name}</DropdownItem></Link>
                 })
                 :
                 <p></p>

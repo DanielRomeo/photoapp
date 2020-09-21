@@ -52,13 +52,18 @@ const elem = <FontAwesomeIcon icon={faMapPin} size="lg"   />;
 // const CLIENT_ID: string = "QQO3DK4LNBUW4PGWWUWWACTXTTN4COHJGSUOIDAO2CQ1UKHX";
  // const CLIENT_SECRET: string ="VWG0IPMJX2HU2KHZVFUSCNGMN1MVCE4ONRDHXSGAMH2H4EJC";
 
-const CLIENT_ID: string = "2FTS3GOCL5XGV2VMIOSAU3UH4TPLAFDNLKFOXABUHUEOE2NH";
-const CLIENT_SECRET: string ="R4J1PGZBNR0XB5D4VXNF2G0SAOCWFJVE4QXEYR2NHGIRUKUY";
+// const CLIENT_ID: string = "2FTS3GOCL5XGV2VMIOSAU3UH4TPLAFDNLKFOXABUHUEOE2NH";
+// const CLIENT_SECRET: string ="R4J1PGZBNR0XB5D4VXNF2G0SAOCWFJVE4QXEYR2NHGIRUKUY";
 
+// const CLIENT_ID: string = "12M434VKOCVEZJ5ODMIG4RZPRFWNEKZ1TPQWYMPOW0UFRW11";
+// const CLIENT_SECRET: string ="AQTLG335H2FEE5D0IS2EC0WKIM3HL3LMYO30SCPWQA1PTO3E";
+
+const CLIENT_ID: string = "MWICBXXLJJWD4PQHRACAE0MZVPKXLB2DMCLKKM5C1UI5DWDG";
+const CLIENT_SECRET: string ="CE5RDZRXCUCYFVRVFR4H2WJH2O40LT2YWOQ2PC2SCA2BUQGW";
 
 let near: string = "Cape town";
 let radius: number = 100000;
-let limit: number = 10; // number of places to show
+let limit: number = 6; // number of places to show
 let section:string = "food";
 
 let version: string = "20190101";
@@ -134,7 +139,8 @@ const Venue = ({
 // console.log(data.id)
         
         
-        store.push({id:data.id, name:data.name});
+        store.push({id:id, name:data.name});
+        console.log('a',store)
         localStorage.setItem('favourites',JSON.stringify(store));
         
         setCart(Math.floor(Math.random() * Math.floor(20)));

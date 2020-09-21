@@ -57,12 +57,19 @@ function Home2() {
 // const CLIENT_SECRET2: string ="VWG0IPMJX2HU2KHZVFUSCNGMN1MVCE4ONRDHXSGAMH2H4EJC";
 
 
-const CLIENT_ID2: string = "2FTS3GOCL5XGV2VMIOSAU3UH4TPLAFDNLKFOXABUHUEOE2NH";
-const CLIENT_SECRET2: string ="R4J1PGZBNR0XB5D4VXNF2G0SAOCWFJVE4QXEYR2NHGIRUKUY";
+// const CLIENT_ID2: string = "2FTS3GOCL5XGV2VMIOSAU3UH4TPLAFDNLKFOXABUHUEOE2NH";
+// const CLIENT_SECRET2: string ="R4J1PGZBNR0XB5D4VXNF2G0SAOCWFJVE4QXEYR2NHGIRUKUY";
+
+// const CLIENT_ID2: string = "12M434VKOCVEZJ5ODMIG4RZPRFWNEKZ1TPQWYMPOW0UFRW11";
+// const CLIENT_SECRET2: string ="AQTLG335H2FEE5D0IS2EC0WKIM3HL3LMYO30SCPWQA1PTO3E";
+
+const CLIENT_ID2: string = "MWICBXXLJJWD4PQHRACAE0MZVPKXLB2DMCLKKM5C1UI5DWDG";
+const CLIENT_SECRET2: string ="CE5RDZRXCUCYFVRVFR4H2WJH2O40LT2YWOQ2PC2SCA2BUQGW";
+
 
   let near: string = "Pretoria";
   let radius: number = 100000;
-  let limit: number = 4; // number of places to show
+  let limit: number = 7; // number of places to show
   let query: string = "sushi";
   let version: string = "20200801";
 
@@ -212,7 +219,7 @@ const CLIENT_SECRET2: string ="R4J1PGZBNR0XB5D4VXNF2G0SAOCWFJVE4QXEYR2NHGIRUKUY"
             p.hasOwnProperty("image") && p.image.hasOwnProperty("items") &&p.image.items.length > 0 ? true : false 
           )).map(function(p:any){
             
-              return <Col id="productCol" xs="12" md="4">
+              return <Col id="productCol" key={p.id} xs="12" md="4">
                 <Product 
                   id={p.id} 
                   image={p.hasOwnProperty("image") && p.image.hasOwnProperty("items") &&p.image.items.length > 0 ? p.image.items[0].prefix+"500x500"+p.image.items[0].suffix : ""}

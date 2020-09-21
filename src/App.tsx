@@ -12,15 +12,15 @@ function App() {
     <div className="App">
         <LocalStorageState>
 
-    	<BrowserRouter>
-        <LeadNavbar></LeadNavbar>
+    	<BrowserRouter >
+          <LeadNavbar></LeadNavbar>
 	        <Switch>
 	        	{/*Basic routes*/}
-            <Route path='/'  exact component={Home} />
-            <Route path='/search'  exact component={Home2} />
+            <Route path='/' exact  component={Home} />
+            <Route path='/search' exact  component={Home2} />
               <Route path ='/Venue/:id' exact render={props => <Venue {...props} />} />
                 
-              <Route path='/'  render={ ()=> <div>
+              <Route path='/404'  render={ ()=> <div>
                   Page was not found: 404
                 </div>} />
 	            </Switch>

@@ -87,7 +87,7 @@ const Home = (props:any) => {
         <Row>
           
           <Link to="/search">
-            <Button id="goToSearchButton" size="lg" block color="success">Not from here, Search for a location, instead!</Button>
+            <Button id="goToSearchButton" size="lg" block color="primary">Not from here, Search for a location, instead!</Button>
           </Link>
         </Row>
 
@@ -97,7 +97,7 @@ const Home = (props:any) => {
 
             {
               data.map(function(item:any){
-                return  <Col id="productCol" xs="12" md="4">
+                return  <Col id="productCol" key={item.id} xs="12" md="4">
                 <RProduct id={item.id} name={item.name} crossStreet={item.location.crossStreet} city={item.location.city} address={item.location.address}></RProduct>
                 </Col>
               })
